@@ -27,7 +27,7 @@ let objItem =[
     },
 ]
 
-let uang = 200000
+let uang = 100000
 
 beli(uang, objItem[0])
 .then(sisauang=>beli(sisauang, objItem[1]))
