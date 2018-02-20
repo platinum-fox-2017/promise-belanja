@@ -29,14 +29,25 @@ susu.waktu = 2000
 
 beli(uang, buku)
   .then(function (kembalian) {
-    beli(kembalian, pulpen)
-    .then(function (kembalian) {
-      beli(kembalian, makanan)
-      .then(function (kembalian) {
-        beli(kembalian, minuman)
-        .then(function (kembalian) {
-          beli(kembalian, susu)
-        }).catch(reject =>{})
-      }).catch(reject =>{})
-    }).catch(reject =>{})
-  }).catch(reject =>{})
+  return beli(kembalian, pulpen)
+  }).then(function (kembalian) {
+  return beli(kembalian, makanan)
+  }).then(function (kembalian) {
+  return beli(kembalian, minuman)
+  }).then(function (kembalian) {
+  return beli(kembalian, susu)
+  }).catch(reject =>{})      
+
+// beli(uang, buku)
+//   .then(function (kembalian) {
+//     beli(kembalian, pulpen)
+//     .then(function (kembalian) {
+//       beli(kembalian, makanan)
+//       .then(function (kembalian) {
+//         beli(kembalian, minuman)
+//         .then(function (kembalian) {
+//           beli(kembalian, susu)
+//         }).catch(reject =>{})
+//       }).catch(reject =>{})
+//     }).catch(reject =>{})
+//   }).catch(reject =>{})
