@@ -1,6 +1,6 @@
 const beli = require('./beli.js')
 
-let uang = 90000
+let uang = 7000
 
 let buku = {}
 buku.item = 'Buku'
@@ -29,14 +29,14 @@ susu.waktu = 2000
 
 beli(uang, buku)
   .then(function (kembalian) {
-    beli(kembalian, pulpen).catch(function(){})
+    beli(kembalian, pulpen)
     .then(function (kembalian) {
-      beli(kembalian, makanan).catch(function(){})
+      beli(kembalian, makanan)
       .then(function (kembalian) {
-        beli(kembalian, minuman).catch(function(){})
+        beli(kembalian, minuman)
         .then(function (kembalian) {
-          beli(kembalian, susu).catch(function(){})
-        })
-      })
-    })
-  })
+          beli(kembalian, susu)
+        }).catch(reject =>{})
+      }).catch(reject =>{})
+    }).catch(reject =>{})
+  }).catch(reject =>{})
