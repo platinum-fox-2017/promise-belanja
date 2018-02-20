@@ -12,38 +12,22 @@ let aqua = new Item('Aqua', 3200);
 let susu = new Item('Frisian Flag 900ml', 18300);
 let mobil = new Item('Suzuki Ignis', 175000000, 2000);
 
-beli(uang,yupi)
-    .then(function(uang){
-        beli(uang, uhaCandy)
-        .then(function(uang){
-            beli(uang, uc1000)
-            .then(function(uang){
-                beli(uang, aqua)
-                .then(function(uang){
-                    beli(uang,susu)
-                    .then(function(uang){
-                        beli(uang, mobil)
-                        .then(function(){})
-                        .catch(function(kurang){
-                            console.log(`duit nya kurang ${kurang}`)
-                        })
-                    })
-                    .catch(function(kurang){
-                        console.log(`duit nya kurang ${kurang}`)
-                    })
-                })
-                .catch(function(kurang){
-                    console.log(`duit nya kurang ${kurang}`)
-                })
-            })
-            .catch(function(kurang){
-                console.log(`duit nya kurang ${kurang}`)
-            })
-        })
-        .catch(function(kurang){
-            console.log(`duit nya kurang ${kurang}`)
-        })
-    })
-    .catch(function(kurang){
-        console.log(`duit nya kurang ${kurang}`);
-    });
+beli(uang, yupi)
+.then(function(uang){
+    return beli(uang,uhaCandy);
+})
+.then(function(uang){
+    return beli(uang,uc1000);
+})
+.then(function(uang){
+    return beli(uang,aqua);
+})
+.then(function(uang){
+    return beli(uang,susu);
+})
+.then(function(uang){
+    return beli(uang,mobil);
+})
+.catch(function(uang){
+    console.log(`pulang gih!`)
+});
