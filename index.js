@@ -29,16 +29,9 @@ let objItem =[
 
 let uang = 200000
 
-beli(uang, objItem[0]).then(sisauang=>{
-    beli(sisauang, objItem[1]).then(sisauang2=>{
-        beli(sisauang2, objItem[2]).then(sisauang3=>{
-            beli(sisauang3, objItem[3]).then(sisauang4=>{
-                beli(sisauang4, objItem[4]).then(sisauang5=>{
-                    console.log('sisa uangnya : ',sisauang5)
-                })
-            })
-        })
-    }) 
-}).catch(err=>{
-    console.log(err)   
-})
+beli(uang, objItem[0])
+.then(sisauang=>beli(sisauang, objItem[1]))
+.then(sisauang1=>beli(sisauang1, objItem[2]))
+.then(sisauang2=>beli(sisauang2, objItem[3]))
+.then(sisauang3=>beli(sisauang3, objItem[4]))
+.catch(err=>console.log(err))
