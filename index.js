@@ -30,32 +30,20 @@ let arrObjItem  = [
                     }
                 ]
 
+
 beli(uang,arrObjItem[0])
 .then(function(kembalian){
-    beli(kembalian,arrObjItem[1])
-    .then(function(kembalian){
-        beli(kembalian,arrObjItem[2])
-        .then(function(kembalian){
-            beli(kembalian,arrObjItem[3])
-            .then(function(kembalian){
-                beli(kembalian,arrObjItem[4])
-                .then(function(kembalian){})
-                .catch(function(err){
-                    console.log("Sisa duit : " + err);
-                })
-            })
-            .catch(function(err){
-                console.log("Sisa duit : " + err);
-            })
-        })
-        .catch(function(err){
-            console.log("Sisa duit : " + err);
-        })
-    })
-    .catch(function(err){
-        console.log("Sisa duit : " + err);
-    })
+    return beli(kembalian,arrObjItem[1])
+})
+.then(function(kembalian){
+    return beli(kembalian,arrObjItem[2])
+})
+.then(function(kembalian){
+    return beli(kembalian,arrObjItem[3])
+})
+.then(function(kembalian){
+    return beli(kembalian,arrObjItem[4])
 })
 .catch(function(err){
-    console.log("Sisa duit : " + err);
+    console.log("sisa duit : " + err);
 })
