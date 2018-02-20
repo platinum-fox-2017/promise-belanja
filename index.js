@@ -21,24 +21,21 @@ caviar.item ='caviar';
 caviar.harga = 1000;
 caviar.waktu = 500;
 
-// let promise1 = beli(22000,cumi);
-// let promise2 = beli(promise1,hoisem);
-// let promise3 = beli(promise2,abalone);
-// let promise4 = beli(promise3,kerang);
-// let promise5 = beli(promise4,caviar);
+// beli(15000,cumi).then((change1)=>{
+//     beli(change1,hoisem).then((change2)=>{
+//         beli(change2,abalone).then((change3)=>{
+//             beli(change3,kerang).then((change4)=>{
+//                 beli(change4,caviar).then((change5)=>{
+//                     console.log(`Sisa uang Rp.${change5}`)
+//                 }).catch((change5)=>console.log(`Sisa uang Rp.${change5}`));
+//             }).catch((change4)=>console.log(`Sisa uang Rp.${change4}`));
+//         }).catch((change3)=>console.log(`Sisa uang Rp.${change3}`));
+//     }).catch((change2)=>console.log(`Sisa uang Rp.${change2}`));
+// }).catch((change1)=>console.log(`Sisa uang Rp.${change1}`));
 
-// Promise.all([promise1]).then((change)=>{
-//     console.log(`Sisa uang Rp.${change}`)
-// }).catch((change)=> console.log(`Uang anda tidak cukup, kurang ${change}`));
-
-beli(15000,cumi).then((change1)=>{
-    beli(change1,hoisem).then((change2)=>{
-        beli(change2,abalone).then((change3)=>{
-            beli(change3,kerang).then((change4)=>{
-                beli(change4,caviar).then((change5)=>{
-                    console.log(`Sisa uang Rp.${change5}`)
-                }).catch((change5)=>console.log(`Sisa uang Rp.${change5}`));
-            }).catch((change4)=>console.log(`Sisa uang Rp.${change4}`));
-        }).catch((change3)=>console.log(`Sisa uang Rp.${change3}`));
-    }).catch((change2)=>console.log(`Sisa uang Rp.${change2}`));
-}).catch((change1)=>console.log(`Sisa uang Rp.${change1}`));
+beli(500,cumi)
+.then((change)=> beli(change,hoisem))
+.then((change)=> beli(change,abalone))
+.then((change)=> beli(change,kerang))
+.then((change)=> beli(change,caviar))
+.catch((change)=>console.log(`Sisa uang Rp.${change}`));

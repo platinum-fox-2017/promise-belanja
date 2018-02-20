@@ -7,7 +7,7 @@ function beli(uang, obj){
         console.log(`Saya sudah membeli ${obj.item} uang kembaliannya ${kembalian}`);
         resolve(kembalian)
       }else{
-        console.log(`uang gk cukup nih buat beli ${obj.item} kembaliannya cuma ${kembalian}`);
+        console.log(`uang gk cukup nih buat beli ${obj.item} Kurang Rp.${Math.abs(kembalian)}`);
         reject(uang)
       }
     }, obj.waktu);
