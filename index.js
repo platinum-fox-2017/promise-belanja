@@ -39,8 +39,37 @@ beli(cash,items[0]).then(function (uang_sisa) {
           } else {
             console.log('Alhamdulillah, sisa uang',uang_sisa4,'masih bisa jajan');
           };
-        }).catch(console.log(err);)
-      }).catch(console.log(err);)
-    }).catch(console.log(err))
-  }).catch(console.log(err);)
-}).catch(console.log(err););
+        }).catch(err => {
+          console.log(err)
+        });
+      }).catch(err => {
+        console.log(err)
+      })
+    }).catch(err => {
+      console.log(err)
+    })
+  }).catch(err => {
+    console.log(err)
+  })
+}).catch(err => {
+  console.log(err)
+});
+
+// beli(cash,items[0])
+// .then(data => {
+//   return beli(data,items[1])
+// })
+// .then(data2 => {
+//   return beli(data2,items[2])
+// })
+// .then(data3 => {
+//   return beli(data3,items[3])
+// })
+// .then(data4 => {
+//   return beli(data4,items[4])
+// })
+// .then(data5 => {
+//   return `uang anda habis`
+// }).catch(err => {
+//   return err;
+// })
