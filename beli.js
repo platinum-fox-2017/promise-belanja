@@ -1,15 +1,17 @@
-function beli(uang, obj, cb){
+function beli(uang, obj) {
   console.log(`Saya pergi membeli ${obj.item}`)
-  setTimeout(function(){
+  return new Promise((resolve, reject) =>{
     let kembalian = uang - obj.harga
-    if (kembalian > 0) {
-      console.log(`Saya sudah membeli ${obj.item} uang kembaliannya ${kembalian}`);
-      cb(kembalian)
-    }else{
-      console.log(`uang gk cukup nih buat beli ${obj.item} kembaliannya cuma ${kembalian}`);
-      cb(0)
+    if (kembalian >= 0) {
+      setTimeout(function(){
+        console.log(`Saya sudah membeli ${obj.item} uang kembaliannya ${kembalian}`)
+        resolve(kembalian)
+      }, obj.waktu)
+    } else {
+      console.log(`uang gk cukup nih buat beli ${obj.item}, cuma ada ${uang}`);
+      reject(uang)
     }
-  }, obj.waktu);
+  })
 }
 
 module.exports = beli;
