@@ -17,7 +17,7 @@ const belanja = (uangBelanja) => {
   return promise;
 }
 
-belanja(3000).then((data) => {
+belanja(6000).then((data) => {
   console.log(data);
 })
 .catch((err) => {
